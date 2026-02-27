@@ -28,11 +28,10 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
-interface SocialLinksProps {
-  onLinkClick: (link: SocialLink) => void;
-}
+import { useLinkConfirmModal } from "@/hooks/useLinkConfirmModal";
 
-const SocialLinks = ({ onLinkClick }: SocialLinksProps) => {
+const SocialLinks = () => {
+  const { showModal } = useLinkConfirmModal();
   return (
     <div className="flex flex-col gap-2">
       {socialLinks.map((link) => {
@@ -40,7 +39,7 @@ const SocialLinks = ({ onLinkClick }: SocialLinksProps) => {
         return (
           <button
             key={link.label}
-            onClick={() => onLinkClick(link)}
+            onClick={() => showModal(link)}
             className="flex items-center gap-2.5 text-muted-foreground transition-colors duration-200 hover:text-primary w-full text-left py-1"
           >
             <Icon size={18} strokeWidth={1.5} />

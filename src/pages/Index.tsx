@@ -1,31 +1,8 @@
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import SocialLinks, { type SocialLink } from "@/components/SocialLinks";
-import LinkConfirmModal from "@/components/LinkConfirmModal";
+import SocialLinks from "@/components/SocialLinks";
 import { Mail } from "lucide-react";
 
 const Index = () => {
-  const [selectedLink, setSelectedLink] = useState<SocialLink | null>(null);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleLinkClick = (link: SocialLink) => {
-    setSelectedLink(link);
-    setModalOpen(true);
-  };
-
-  const handleConfirm = () => {
-    if (selectedLink) {
-      window.open(selectedLink.href, "_blank", "noopener,noreferrer");
-    }
-    setModalOpen(false);
-    setSelectedLink(null);
-  };
-
-  const handleCancel = () => {
-    setModalOpen(false);
-    setSelectedLink(null);
-  };
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-6 py-16">
       <main className="flex flex-1 flex-col items-center justify-center text-center max-w-xl w-full gap-16 sm:gap-24">
@@ -49,7 +26,7 @@ const Index = () => {
 
             <Card className="w-full pt-3 pb-2">
               <CardContent className="px-4 py-0">
-                <SocialLinks onLinkClick={handleLinkClick} />
+                <SocialLinks />
               </CardContent>
             </Card>
           </div>
@@ -61,13 +38,6 @@ const Index = () => {
           &copy; {new Date().getUTCFullYear()} Faeza Raziq
         </p>
       </footer>
-
-      <LinkConfirmModal
-        link={selectedLink}
-        open={modalOpen}
-        onConfirm={handleConfirm}
-        onCancel={handleCancel}
-      />
     </div>
   );
 };
