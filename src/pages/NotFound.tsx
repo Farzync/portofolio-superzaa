@@ -26,7 +26,7 @@ const NotFound = () => {
           <div className="relative w-full max-w-sm">
             {/* Floating label — same pattern as Index "Contact Me" badge */}
             <span className="absolute -top-2.5 left-4 z-10 bg-background px-2 text-[11px] font-body text-muted-foreground border border-border rounded-full leading-5 flex items-center gap-1">
-              <Compass className="w-2.5 h-2.5" />
+              <Compass className="w-3 h-3" />
               Lost?
             </span>
 
