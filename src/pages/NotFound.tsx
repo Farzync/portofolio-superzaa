@@ -8,7 +8,7 @@ const NotFound = () => {
       <main className="flex flex-1 flex-col items-center justify-center text-center max-w-xl w-full gap-16 sm:gap-20">
         {/* Header */}
         <div className="flex flex-col items-center gap-3">
-          <div className="fade-in relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center transition-opacity duration-700 opacity-0 animate-fadeIn">
             <h1 className="font-heading text-8xl sm:text-9xl font-bold tracking-tight text-foreground z-10 select-none">
               404
             </h1>
@@ -16,13 +16,13 @@ const NotFound = () => {
 
           <Separator />
 
-          <p className="fade-in-delay-1 mt-1 text-sm sm:text-base font-body uppercase tracking-[0.3em] text-muted-foreground">
+          <p className="mt-1 text-sm sm:text-base font-body uppercase tracking-[0.3em] text-muted-foreground transition-opacity duration-700 opacity-0 animate-fadeIn [animation-delay:200ms]">
             Page Not Found
           </p>
         </div>
 
         {/* Info card — mirrors Index card block */}
-        <div className="fade-in-delay-2 flex justify-center w-full">
+        <div className="flex justify-center w-full transition-opacity duration-700 opacity-0 animate-fadeIn [animation-delay:400ms]">
           <div className="relative w-full max-w-sm">
             {/* Floating label — same pattern as Index "Contact Me" badge */}
             <span className="absolute -top-2.5 left-4 z-10 bg-background px-2 text-[11px] font-body text-muted-foreground border border-border rounded-full leading-5 flex items-center gap-1">
@@ -44,7 +44,7 @@ const NotFound = () => {
       </main>
 
       {/* Footer — identical to Index */}
-      <footer className="fade-in-delay-3 mt-auto pt-16 pb-8">
+      <footer className="mt-auto pt-16 pb-8 transition-opacity duration-700 opacity-0 animate-fadeIn [animation-delay:600ms]">
         <p className="text-xs text-muted-foreground font-body">
           &copy; {new Date().getUTCFullYear()} Faeza Raziq
         </p>

@@ -26,16 +26,13 @@ const LinkConfirmModal = ({
   if (!link) return null;
   const Icon = link.icon;
 
-  // Only modal (DialogContent) gets fade-in/fade-out effect
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onCancel()}>
       <DialogContent
         className={[
           "sm:max-w-sm",
-          "transition-all duration-300 ease-in-out",
-          open
-            ? "opacity-100 scale-100"
-            : "opacity-0 scale-95 pointer-events-none",
+          "transition-all duration-400",
+          open ? "opacity-100 scale-100" : "opacity-0 scale-95",
           "bg-background border border-border shadow-xl rounded-xl p-6 flex flex-col gap-6",
         ].join(" ")}
       >
@@ -48,7 +45,7 @@ const LinkConfirmModal = ({
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex items-center gap-4 rounded-lg border border-border bg-muted/30 px-5 py-4">
+        <div className="fade-in flex items-center gap-4 rounded-lg border border-border bg-muted/30 px-5 py-4">
           <span className="flex items-center justify-center w-10 h-10 rounded-full bg-muted">
             <Icon
               size={20}

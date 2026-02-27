@@ -12,12 +12,14 @@ const GlobalLinkConfirmModal = () => {
   };
 
   return (
-    <LinkConfirmModal
-      link={link}
-      open={open}
-      onConfirm={handleConfirm}
-      onCancel={hideModal}
-    />
+    <div className="transition-opacity duration-700 opacity-0 animate-fadeIn">
+      <LinkConfirmModal
+        link={link}
+        open={open}
+        onConfirm={handleConfirm}
+        onCancel={hideModal}
+      />
+    </div>
   );
 };
 
